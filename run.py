@@ -1,3 +1,6 @@
-from app import manager
+from YourLife import app, db
+from YourLife.model import tables
+
 if __name__ =="__main__":
-    manager.run()
+    db.create_all()
+    app.run()
