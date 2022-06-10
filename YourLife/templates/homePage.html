@@ -1,12 +1,26 @@
-{% extends 'base.html' %}
+{% extends 'bootstrap/base.html' %}
 
 {% block title %}
 YourLife
 {% endblock %}
 
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
 {% block content %}
 
-<h1>Bem vindo!</h1>
-<p><a href="/register">Clique aqui para se registrar</a></p>
+
+<div id= "main" class="" style="background-color: #F2F0E4; height: 100vh; width: 100%">
+    <div id="message" class="cent" style="text-align: center;">
+        <div>
+            <h1 style="font-size: 7em">YourLife</h1>
+        </div>
+        <div>
+            <a class="btn btn-primary" href="/register" role="button">Clique aqui para se registrar</a>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

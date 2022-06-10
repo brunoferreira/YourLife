@@ -1,3 +1,18 @@
 p.thick {
     font-weight: bold;
 }
+
+div.cent {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+.btn-1 {
+    color: #fff;
+    background-color: #717dc5;
+    border-color: #717dc5;
+}
