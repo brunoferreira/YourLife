@@ -12,3 +12,9 @@ def email_available(email):
     if query == None:
         return True
     return False
+
+def login(username, password):
+    query = User.query.filter_by(username=username, password=password).first()
+    if query == None:
+        return False
+    return True

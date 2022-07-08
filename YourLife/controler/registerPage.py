@@ -1,4 +1,4 @@
-from flask import render_template, redirect
+from flask import render_template, redirect, session
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import InputRequired, Email, EqualTo, Length
@@ -45,6 +45,8 @@ def registerForm():
             db.session.add(tables.User(username, password, name, surname, email))
             db.session.commit()
             return redirect('/registered')
+    else:
+        print(form.errors)
     return render_template('registerPage.html', form=form, message=message)
 
 @app.route("/registered")

@@ -7,4 +7,4 @@ app.config.from_object('config')
 db=SQLAlchemy(app)
 Bootstrap(app)
 
-from YourLife.controler import homePage, registerPage
+from YourLife.controler import homePage, registerPage, loginPage, profilePage
