@@ -29,14 +29,14 @@ def edit(username):
         if photo.filename != '':
             filename = secure_filename(photo.filename)
             queries.change_profile_photo(username, filename)
-            photo.save('YourLife/photos/' + filename)
+            photo.save('YourLife/YourLife/photos/' + filename)
         if summary:
             queries.change_summary(username, summary)
         if album[0].filename != '':
             for pic in album:
                 filename = secure_filename(pic.filename)
                 queries.add_album_photo(username, filename)
-                pic.save('YourLife/photos/' + filename)
+                pic.save('YourLife/YourLife/photos/' + filename)
         form.summary.data = ""
         return redirect('/profile/'+username)
 
