@@ -2,9 +2,9 @@ from flask import render_template, redirect, session
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import InputRequired, Email, EqualTo, Length
-
 from YourLife import app, db
 from YourLife.model import tables, queries
+import os
 
 class RegistrationForm(FlaskForm):
     name = StringField('Nome', validators=[InputRequired()])
@@ -43,10 +43,13 @@ def registerForm():
             form.password.data = ""
             form.email.data = ""
             db.session.add(tables.User(username, password, name, surname, email))
+            filepath = os.path.join(
+                app.root_path, 'photos', 'default.png'
+            )
+            db.session.add(tables.Photo(filepath, username, 0))
             db.session.commit()
             return redirect('/registered')
-    else:
-        print(form.errors)
+
     return render_template('registerPage.html', form=form, message=message)
 
 @app.route("/registered")
