@@ -15,21 +15,42 @@ YourLife
 
 {% block content %}
 
-<div id= "main" class="" style="background-color: #F2F0E4; height: 100vh; width: 100%">
+<div id= "main" class="" style="background-color: #F2F0E4; height: 150vh; width: 100%">
     <div id="message" class="cent" style="text-align: center;">
-        <div>
-            <a class="btn btn-primary" href="{{ url_for('edit',username=session.get('username') ) }}" role="button">Edite seus dados</a>
+        <div class="wrapper-1">
+            <div class="box-3" style="background-color: #73726C">
+                <img src="{{ profile_photo }}" height="200" width="200"/>
+            </div>
+            <div class="box-3" style="display: initial">
+                <h4 style="color: #73726C">
+                    {{ full_name }}
+                </h4>
+                <br />
+                <p style="color: #73726C">
+                    {{ summary }}
+                </p>
+            </div>
+            <div class="box-3" style="background-color: #73726C">
+                {% for photo_path in album %}
+                <img src="{{ photo_path }}" height="100" width="100"/>
+                {% endfor %}
+            </div>
         </div>
-        <div>
-            <a class="btn btn-primary" href="{{ url_for('album',username=session.get('username') ) }}" role="button">Álbum pessoal</a>
+        <div class="wrapper-1" style="height: 40px;">
+            <div class="box-3">
+                <a class="btn btn-primary" href="{{ url_for('edit',username=session.get('username') ) }}" role="button">Edite seus dados</a>
+            </div>
+            <div class="box-3">
+
+            </div>
+            <div class="box-3">
+                <a class="btn btn-primary" href="{{ url_for('album',username=session.get('username') ) }}" role="button">Álbum pessoal</a>
+            </div>
         </div>
-        <div>
-            <p>
-                {{ full_name }}
-            </p>
-            <p>
-                {{ summary }}
-            </p>
+        <div style="padding-top: 60px;">
+            <h2 style="color: #73726C">
+                Feed de postagens
+            </h2>
             {% for post in posts %}
             <p>
                 {{post}}
@@ -38,24 +59,50 @@ YourLife
         </div>
     </div>
 
-    <img src="{{ profile_photo }}" height="200" width="200"/>
-
-    {% for photo_path in album %}
-    <img src="{{ photo_path }}" height="100" width="100"/>
-    {% endfor %}
-
-    <form method="post">
-        <label for="content">Nova publicação</label>
+    <form method="post" style="margin: 60px">
+        <label for="content" style="color: #73726C; font-size:24px; font-weight: bold">Nova publicação</label>
         <br>
         <textarea name="content"
-                  placeholder="Oi..."
-                  rows="6"
+                  placeholder="O que você está pensando hoje?"
+                  rows="3"
                   cols="140"
+                  style="background-color: #fff; color: #003E80"
                   ></textarea>
         <br>
-        <button class="btn btn-primary" type="submit">Postar</button>
+        <div style="text-align: right; margin: 150 px;">
+            <button class="btn btn-primary" type="submit">Postar</button>
+        </div>
     </form>
 
+    <footer class="footer" style="width: 100%">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 item">
+                    <h2>Cadastro</h2>
+                    <ul>
+                        <li><a href="/register">Primeira vez</a></li>
+                        <li><a href="/login">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h2>Contato</h2>
+                    <ul>
+                        <li><a href="#">Equipe</a></li>
+                        <li><a href="#">Conversar concosco</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h2>Fotos</h2>
+                    <ul>
+                        <li><a href=#>Album</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <p class="copyright" style="text-align:center">YourLife © 2022</p>
+            </div>
+        </div>
+    </footer>
 </div>
 
 {% endblock %}

@@ -4,7 +4,7 @@ p.thick {
 
 div.cent {
     position: relative;
-    top: 15%;
+    top: 25%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -17,6 +17,82 @@ div.cent {
     border-color: #37324D;
 }
 
+.wrapper-1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.box-1 {
+  box-sizing: border-box;
+  padding: 1rem;
+  margin: 1rem;
+  width: calc((100% / 2) - 2rem);
+}
+
+.box-2 {
+  box-sizing: border-box;
+  padding: 1rem;
+  margin: 1rem;
+  width: calc((100% / 4) - 2rem);
+}
+
+.box-3 {
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 30px;
+  padding: 1rem;
+  margin: 1rem;
+  width: calc((100% / 3) - 2rem);
+  display: flex;
+  justify-content: center;
+}
+
+
+.lista {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 7px;
+  box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+  padding: 60px;
+  margin: 20px;
+  width: 530px;
+  transition: all 0.3s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+ 
+.card p {
+  color: #a3a5ae;
+  font-size: 12px;
+}
+ 
+.image {
+  float: right;
+  max-width: 100px;
+  max-height: 100px;
+}
+ 
+.blue {
+  border-left: 6px solid #007BFF;
+}
+ 
+.blue-dark {
+  border-left: 6px solid #003E80;
+}
+
+prim-color: #F2F0E4;
+prim-color-1: #73726C;
+prim-color-2: #FFFDF0;
+sec-color: #007BFF;
+sec-color-1: #003E80;
+sec-color-2: #006FE6;
 
 
 img {
@@ -28,226 +104,75 @@ img {
 ul {
     list-style-type: none;
 }
-  
-  
-/* UTILITIES */
-  
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-  
-.float-right {
-    float: right;
-}
-  
-.float-left {
-    float: left;
-}
-  
-  
-  /* TABS */
-  
-  .mdl-layout__tab-bar {
-    margin: 0 auto;
-    max-width: 300px;
-  }
-  
-  
-  /* DRAWER */
-  
-  .mdl-layout__drawer-button,
-  .mdl-layout__drawer-button i {
-    color: white;
-  }
-  
-  @media (max-width: 900px) {
-    .mdl-layout__drawer-button {
-      width: 100%;
-      margin: 0;
-      background-color: transparent;
-    }
-  }
-  
-  .avatar {
-    height: 200px;
-    width: 200px;
-    margin: 0 auto 2em;
-  }
-  
-  .avatar-img {
-    height: 200px;
-    width: 200px;
-    margin: 0 auto;
-    border-radius: 50%;
-  }
-  
-  .drawer-text {
-    padding: 1em;
-    text-align: center;
-  }
-  
-  
-  /* HERO SECTION */
-  
-  .hero-section {
-    height: 100vh;
-    /* IE11 doesn't like min-height */
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: rgba(63, 81, 181, 0.6);
-    background-image: linear-gradient(rgba(63, 81, 181, 0.3), rgba(63, 81, 181, 0.3)), url(https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29ya3xlbnwwfHwwfHw%3D&w=1000&q=80);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-  }
-  
-  .hero-text {
-    color: white;
-    margin: auto;
-  }
-  
-  @media screen and (max-width: 580px) {
-    .hero-text p {
-      white-space: pre-line;
-    }
-  }
-  
-  
-  /* ABOUT INTRO */
-  
-  .intro-section {
-    padding: 5em 2em 5em;
-  }
-  
-  .about p {
-    max-width: 640px;
-    margin: auto;
-  }
-  
-  .circle-container {
-    width: 100%;
-    min-height: 100px;
-    padding: 2em 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  .circle-container .circle {
-    height: 16px;
-    width: 16px;
-    background-color: #c51162;
-    border-radius: 50%;
-    margin: 0 3px 9px;
-  }
-  
-  .topics-container {
-    padding: 2em 0;
-  }
-  
-  .topics-container .topic {
-    font-size: 20px;
-    margin: 0 2px 5px;
-  }
-  
-  @media screen and (max-width: 480px) {
-    .topics-container .topic {
-      margin-bottom: 0.5em;
-    }
-  }
-  
-  .embedded-img {
-    max-width: 150px;
-    max-height: 150px;
-    margin: 0.5em;
-    border-radius: 50%;
-  }
-  
 
-  
-  /* FULLWIDTH BACKGROUND SECTION */
-  
-  .fullwidth-panel {
-    color: white;
-    background-color: rgba(156, 39, 176, 0.6);
-  }
-  
-  .fullwidth-panel p {
-    max-width: 640px;
-    margin: auto;
-  }
-  
-  .quote-panel {
-    background-image: linear-gradient(rgba(63, 81, 181, 0.5), rgba(63, 81, 181, 0.5)), url('https://www.bdpromarketing.com/wp-content/uploads/2019/05/Depositphotos_92614708_xl-2015.jpg');
-    background-position: center 5%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 4em 2em 2em;
-    display: flex;
-    align-content: flex-start;
-  }
-  
-  @media screen and (min-width: 800px) {
-    .quote-panel {
-      background-position: center 0;
-      padding: 6em 2em;
-    }
-  }
-  
-  @media screen and (min-width: 1200px) {
-    .quote-panel {
-      background-position: center 8%;
-      padding: 10em 2em 8em;
-    }
-  }
+.img-section {
+  /* IE11 doesn't like min-height */
+  vertical-align: middle;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29ya3xlbnwwfHwwfHw%3D&w=1000&q=80);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
 
-  
-  .contact-panel {
-    padding: 6em 4em;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-  }
-  
-  .mdl-textfield {
-    display: block;
-    width: 100%;
-    padding: 20px 0;
-  }
-  
-  @media screen and (min-width: 800px) {
-    .subscribe-button {
-      float: right;
-    }
-  }
-  
-  .address-panel {
-    background-color: #dbdef1;
-    color: rgba(255, 255, 255, 0.87);
-  }
-  
-  .address-panel .material-icons {
-    position: relative;
-    top: 0.2em;
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    background-color: #ff4081;
-    padding: 0.5em;
-    border-radius: 50%;
-  }
-  
-  .mdl-mini-footer,
-  .mdl-mini-footer .mdl-logo,
-  .mdl-mini-footer--link-list a,
-  .mdl-mini-footer__link-list a {
-    color: rgba(0, 0, 0, 0.54);
-  }
+.img-text {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  color: white;
+  margin: auto;
+  text-align: center center;
+}
+
+/* Footer */
+
+.footer {
+  padding:50px 0;
+  background-color:#73726C;
+  color:#fff;
+}
+
+.footer h2 {
+  text-align:center;
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+  color:#F2F0E4;
+}
+
+.footer ul {
+  text-align:center;
+  color:#F2F0E4;
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer ul a:hover {
+  opacity:1;
+}
+
+.footer .copyright {
+  margin-top:14px;
+  margin-bottom:0;
+  font-size:13px;
+  color: #fff;
+}
+
+
