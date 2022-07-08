@@ -43,9 +43,7 @@ def registerForm():
             form.password.data = ""
             form.email.data = ""
             db.session.add(tables.User(username, password, name, surname, email))
-            filepath = os.path.join(
-                app.root_path, 'photos', 'default.png'
-            )
+            filepath = 'default.jpg'
             db.session.add(tables.Photo(filepath, username, 0))
             db.session.commit()
             return redirect('/registered')
