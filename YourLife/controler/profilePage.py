@@ -4,7 +4,7 @@ from YourLife.model import queries
 
 @app.route("/profile/<username>")
 def profile(username):
-    if username == session['username']:
+    if username == session.get('username'):
         return render_template('profilePage.html')
     else:
         return render_template('profilePage.html')
