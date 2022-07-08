@@ -21,6 +21,9 @@ YourLife
             <a class="btn btn-primary" href="{{ url_for('edit',username=session.get('username') ) }}" role="button">Edite seus dados</a>
         </div>
         <div>
+            <a class="btn btn-primary" href="{{ url_for('album',username=session.get('username') ) }}" role="button">Álbum pessoal</a>
+        </div>
+        <div>
             <p>
                 {{ full_name }}
             </p>
