@@ -11,13 +11,13 @@ class User(db.Model):
     email=db.Column(db.String, unique=True)
     summary=db.Column(db.String)
 
-    def __init__(self,username,password,name,surname,email):
+    def __init__(self,username,password,name,surname,email,summary):
         self.username=username
         self.password=password
         self.name=name
         self.surname=surname
         self.email=email
-        self.summary = ''
+        self.summary = summary
 
     def __repr__(self):
         return "<User %r>" % self.username

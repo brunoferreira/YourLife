@@ -42,7 +42,7 @@ def registerForm():
             form.username.data = ""
             form.password.data = ""
             form.email.data = ""
-            db.session.add(tables.User(username, password, name, surname, email))
+            db.session.add(tables.User(username, password, name, surname, email, ''))
             filepath = 'default.jpg'
             db.session.add(tables.Photo(filepath, username, 0))
             db.session.commit()
