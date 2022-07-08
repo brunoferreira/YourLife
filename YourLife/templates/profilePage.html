@@ -25,19 +25,21 @@ YourLife
                 {{ full_name }}
             </p>
             <p>
-                <img src="{{ profile_photo }}" height="100" width="100"/>
-            </p>
-            <p>
                 {{ summary }}
             </p>
+            {% for post in posts %}
             <p>
-                {{ album }}
+                {{post}}
             </p>
-            <p>
-                {{ posts }}
-            </p>
+            {% endfor %}
         </div>
     </div>
+
+    <img src="{{ profile_photo }}" height="200" width="200"/>
+
+    {% for photo_path in album %}
+    <img src="{{ photo_path }}" height="100" width="100"/>
+    {% endfor %}
 
     <form method="post">
         <label for="content">Nova publicação</label>

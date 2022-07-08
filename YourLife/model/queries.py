@@ -40,7 +40,7 @@ def add_album_photo(username, filepath):
     db.session.commit()
 
 def get_album_photos(username):
-    query = db.session.query(Photo).filter(Photo.username == username and Photo.type == 1)
+    query = db.session.query(Photo).filter(Photo.username == username, Photo.type == 1)
     res = []
     for r in query.all():
         res.append(r.filepath)
