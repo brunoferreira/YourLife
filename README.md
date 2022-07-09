@@ -31,3 +31,9 @@ localhost:5000/
 
 localhost:5000/register
 - Description: Regristation page
+
+Site:
+http://yourlife.pythonanywhere.com/
+
+Vídeo de apresentação:
+https://www.youtube.com/watch?v=6t9XML0XAGA
